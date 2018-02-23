@@ -1,0 +1,13 @@
+.red {
+  background: red;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+img {
+  max-height: 100px;
+  vertical-align: middle;
+}

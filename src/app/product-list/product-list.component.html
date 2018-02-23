@@ -1,0 +1,20 @@
+<p>
+  Total product count: {{products.length}}
+</p>
+<input type="text" [value]="" (input)="handleChange($event.target.value)"/>
+<div *ngIf="products.length > 1">
+    Searching for {{ search }} in {{ products.length }} products
+</div>
+<ul>
+  <li *ngFor="let product of products">
+    <div *ngIf="product.inStock && (product.productName===search || !search)" >
+      <img src={{product.imageUrl}}>
+      {{product.productName}}
+      {{ product.lastRenewed ? "Last Restock" : "" }}
+      {{ product.lastRenewed | date: 'yyyy MMM dd' }}
+
+    </div>
+  </li>
+</ul>
+<app-product-count [productList]="products"></app-product-count>
+
